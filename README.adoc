@@ -8,10 +8,10 @@ It leverages gpg to verify the files, so you will need to generate a gpg key and
 
 == Example
 
-The following config will attempt to load the file $kak_config/machines/$(hostname).kak and $PWD/project.kak
+The following config will attempt to load the file `$kak_config/machines/$(hostname).kak` and `$PWD/project.kak`
 if said files exist and have valid signature files:
 
-kakrc
+.kakrc
 [source,kak]
 ----
 require-module hestia
