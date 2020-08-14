@@ -1,3 +1,5 @@
+provide-module hestia %§
+
 declare-option -docstring 'gpg signing key' str hestia_key
 
 define-command hestia-sign-file -params 1 -file-completion %{
@@ -52,3 +54,5 @@ define-command hestia-sign-machine -docstring 'Sign "$(hostname).kak" file in $k
 define-command hestia-sign-project -docstring 'Sign "project.kak" file in $PWD' %{
     hestia-sign-file "%sh{ printf %s $PWD }/project.kak"
 }
+
+§

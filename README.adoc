@@ -3,8 +3,23 @@ Parasrah <git@parasrah.com>
 
 Hestia is a kakoune plugin to securely load kakoune configuration files for specific machines/projects
 
-Leverages GPG to verify the files, so you will need to generate a gpg key and sign the files using
+It leverages gpg to verify the files, so you will need to generate a gpg key and sign the files using
 `hestia-sign-*` commands before you can load them.
+
+== Example
+
+The following config will attempt to load the file $kak_config/machines/$(hostname).kak and $PWD/project.kak
+if said files exist and have valid signature files:
+
+kakrc
+[source,kak]
+----
+require-module hestia
+set-option global hestia_key '5829C203038L1O22'
+
+hestia-load-machine
+hestia-load-project
+----
 
 == Options
 
