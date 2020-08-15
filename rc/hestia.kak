@@ -28,7 +28,7 @@ define-command hestia-load-file -params 1 -file-completion %{
 
             error=$(gpg --verify "${@}.asc" 2>&1 1>/dev/null)
             if [ $? -eq 0 ]; then
-                cat $@
+                echo "source ${@}"
             else
                 echo "echo 'failed to verify gpg key, check debug buffer'"
                 echo "echo -debug \"hestia: ${error}\""
