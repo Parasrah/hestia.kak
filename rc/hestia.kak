@@ -44,7 +44,7 @@ define-command hestia-load-machine -docstring 'Load "$(hostname).kak" file in $k
 }
 
 define-command hestia-load-project -docstring 'Load "project.kak" file in $PWD' %{
-    hestia-load-file "%sh{ printf %s $PWD }/project.kak"
+    hestia-load-file "%sh{ realpath $PWD }/project.kak"
 }
 
 define-command hestia-sign-machine -docstring 'Sign "$(hostname).kak" file in $kak_config/machines' %{
@@ -52,7 +52,7 @@ define-command hestia-sign-machine -docstring 'Sign "$(hostname).kak" file in $k
 }
 
 define-command hestia-sign-project -docstring 'Sign "project.kak" file in $PWD' %{
-    hestia-sign-file "%sh{ printf %s $PWD }/project.kak"
+    hestia-sign-file "%sh{ realpath $PWD }/project.kak"
 }
 
 §
